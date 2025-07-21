@@ -49,7 +49,7 @@
   
 </head>
 <body>
-  <h1>Click the pizza 🎂</h1>
+  <h1>🎉 Click the pizza! 🎂</h1>
   <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" id="cake" alt="Cake">
   <div id="message"></div>
 
@@ -57,9 +57,12 @@
     const messages = [
       "HAPPY BIRTHDAY MANYA, here's 7 pickup lines you can use in Toulouse",
       "I’d violate budget constraints just to spend time with you.",
-      "Forget the market — you’re my only preference."
-      "Your presence shifts all my curves to the right."
-      "I want you like Mankiw wants lower corporate taxes — shamelessly and with weak justification."
+      "Forget the market; you’re my only preference.",
+      "Your presence shifts all my curves to the right.",
+      "I want you like Mankiw wants lower corporate taxes; shamelessly and with weak justification.",
+      "If you were a public good, I'd free ride forever.",
+      "You're the only equilibrium I want to be stuck in.",
+      "okay happy birthday you sorry I forgot, there is no excuse. I love you, moving countries is very difficult so I cannot imagine doing it alone and I am glad you are there by my side. You made me want to figure out html today, just like you've pushed me to be the best version of myself throughout the past three years. Happy 21sttt. I'm excited to compete with my best match for the next two years because how else would we be the econ queens without each 🎂❤️"
     ];
 
     let index = 0;
@@ -68,7 +71,7 @@
 
     function randomPosition() {
       const maxX = window.innerWidth - cake.offsetWidth;
-      const maxY = window.innerHeight - cake.offsetHeight - 150; // avoid overlapping header & message
+      const maxY = window.innerHeight - cake.offsetHeight - 150;
       const randomX = Math.floor(Math.random() * maxX);
       const randomY = Math.floor(Math.random() * maxY);
       cake.style.left = randomX + 'px';
@@ -81,7 +84,7 @@
         index++;
         randomPosition();
       } else {
-        msgDiv.textContent = "okay happy birthday you know, Happy 21sttt";
+        msgDiv.textContent = "No more pickup lines. Just love. 🎂❤️";
       }
     });
 
