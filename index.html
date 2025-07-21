@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Click the Chaos Cake 🎂</title>
+
+  <style>
+    body {
+      background-color: #fffbe6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    #cake {
+      width: 120px;
+      cursor: pointer;
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+      animation: wiggle 0.4s infinite;
+    }
+
+    @keyframes wiggle {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #b5651d;
+      min-height: 100px;
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+    }
+  </style>
+
+  
+</head>
+<body>
+  <h1>Click the pizza 🎂</h1>
+  <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" id="cake" alt="Cake">
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "HAPPY BIRTHDAY MANYA, here's 7 pickup lines you can use in Toulouse",
+      "I’d violate budget constraints just to spend time with you.",
+      "Forget the market — you’re my only preference."
+      "Your presence shifts all my curves to the right."
+      "I want you like Mankiw wants lower corporate taxes — shamelessly and with weak justification."
+    ];
+
+    let index = 0;
+    const cake = document.getElementById("cake");
+    const msgDiv = document.getElementById("message");
+
+    function randomPosition() {
+      const maxX = window.innerWidth - cake.offsetWidth;
+      const maxY = window.innerHeight - cake.offsetHeight - 150; // avoid overlapping header & message
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+      cake.style.left = randomX + 'px';
+      cake.style.top = randomY + 'px';
+    }
+
+    cake.addEventListener("click", function () {
+      if (index < messages.length) {
+        msgDiv.textContent = messages[index];
+        index++;
+        randomPosition();
+      } else {
+        msgDiv.textContent = "okay happy birthday you know how much I love you sorry I missed it, there is no excuse I love you and I am in love with you and I can't wait to live with you, moving countries would be unimaginable without you by my side and I am always always grateful that you are there with me through this. Thank you for being the my support system. Happy 21sttt";
+      }
+    });
+
+    // Start with random position
+    randomPosition();
+  </script>
+</body>
+</html>
